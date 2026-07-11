@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#F8FAFC] text-ink-900 font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-crimson-200 text-crimson-900;
+  }
+}
+
+@layer utilities {
+  .container-portal {
+    @apply max-w-[1280px] mx-auto px-5 md:px-8 lg:px-12;
+  }
+  .card-surface {
+    @apply bg-white border border-slate-200/80 rounded-2xl shadow-soft;
+  }
+  .form-input {
+    @apply w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors placeholder:text-slate-400 focus:border-crimson-400 focus:ring-2 focus:ring-crimson-100;
+  }
+  .grid-overlay {
+    background-image: linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
